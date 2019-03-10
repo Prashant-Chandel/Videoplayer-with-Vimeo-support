@@ -227,7 +227,7 @@ public class UniversalMediaController extends FrameLayout {
     private void init(Context context) {
         mContext = context;
         LayoutInflater inflater = (LayoutInflater) mContext.getSystemService(Context.LAYOUT_INFLATER_SERVICE);
-        View viewRoot = inflater.inflate(R.layout.uvv_player_controller, this);
+        View viewRoot = inflater.inflate(R.layout.universal_vv_player_controller, this);
         viewRoot.setOnTouchListener(mTouchListener);
         initControllerView(viewRoot);
     }

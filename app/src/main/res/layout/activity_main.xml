@@ -41,7 +41,7 @@
             android:layout_height="50dp"
             android:background="@color/uvv_gray"
             android:gravity="center"
-            android:text="start" />
+            android:text="start Playing" />
 
         <TextView
             android:id="@+id/introduction"
@@ -49,7 +49,7 @@
             android:layout_height="0dp"
             android:layout_weight="1"
             android:gravity="center"
-            android:text="this is video introduciton ......"
+            android:text="Do your work here ..."
             android:background="@color/uvv_gray" />
 
 

@@ -185,7 +185,7 @@ public class MainActivity extends AppCompatActivity implements UniversalVideoVie
             mBottomLayout.setVisibility(View.VISIBLE);
         }
 
-        switchTitleBar(!isFullscreen);
+        //switchTitleBar(!isFullscreen);
     }
 
     private void switchTitleBar(boolean show) {
