@@ -1,6 +1,13 @@
 # Videoplayer-with-Vimeo-support
 Android Vimeo /normal video player 
 
+#DEMO Screen shots
+![alt text](https://github.com/Prashant-Chandel/Videoplayer-with-Vimeo-support/blob/master/Screenshot/Screenshot_20190310-160858.png)
+![alt text](https://github.com/Prashant-Chandel/Videoplayer-with-Vimeo-support/blob/master/Screenshot/Screenshot_20190310-160922.png)
+![alt text](https://github.com/Prashant-Chandel/Videoplayer-with-Vimeo-support/blob/master/Screenshot/Screenshot_20190310-161047.png)
+![alt text](https://github.com/Prashant-Chandel/Videoplayer-with-Vimeo-support/blob/master/Screenshot/Screenshot_20190310-161052.png)
+![alt text](https://github.com/Prashant-Chandel/Videoplayer-with-Vimeo-support/blob/master/Screenshot/Screenshot_20190310-162217.png)
+
 Usage
 For a working implementation of this project see the sample app.
 
@@ -58,7 +65,9 @@ Include the UniversalVideoView and UniversalMediaController widget in your layou
                     app:uvv_scalable="true" />
 
             </FrameLayout>
-In your onCreate method, set the UniversalMediaController to the UniversalVideoView and implements the UniversalVideoView.VideoViewCallback Callback.
+	    
+In your onCreate method, set the UniversalMediaController to the UniversalVideoView and implements the
+UniversalVideoView.VideoViewCallback Callback.
             View mBottomLayout;
             View mVideoLayout;
             UniversalVideoView mVideoView;
@@ -114,8 +123,8 @@ In your onCreate method, set the UniversalMediaController to the UniversalVideoV
             
 Work with vimeo Executor:-To get an vimeo playable link from vimeo client
 Video information can be extracted from an identifier:
-
-{VimeoExtractor.getInstance().fetchVideoWithIdentifier("1234", null, new OnVimeoExtractionListener() {
+```java
+VimeoExtractor.getInstance().fetchVideoWithIdentifier("1234", null, new OnVimeoExtractionListener() {
             @Override
             public void onSuccess(VimeoVideo video) {
                 String hdStream = video.getStreams().get("1080p");
@@ -127,9 +136,11 @@ Video information can be extracted from an identifier:
                 //Error handling here
             }
 });}
+```
+
 Or alternatively from a full video url:
-
-{VimeoExtractor.getInstance().fetchVideoWithURL("https://vimeo.com/1234", null, new OnVimeoExtractionListener() {
+```java
+VimeoExtractor.getInstance().fetchVideoWithURL("https://vimeo.com/1234", null, new OnVimeoExtractionListener() {
             @Override
             public void onSuccess(VimeoVideo video) {
                 String hdStream = video.getStreams().get("1080p");
@@ -140,7 +151,8 @@ Or alternatively from a full video url:
             public void onFailure(Throwable throwable) {
                 //Error handling here
             }
-});}
+});
+```
 
 Please build and read the documentation for a better oversight of the information available from each video.
 
