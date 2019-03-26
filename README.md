@@ -1,17 +1,19 @@
 # Videoplayer-with-Vimeo-support
 Android Vimeo /normal video player 
+# DEMO Screen shots
 
-#DEMO Screen shots
+
+
 ![alt text](https://github.com/Prashant-Chandel/Videoplayer-with-Vimeo-support/blob/master/Screenshot/Screenshot_20190310-160858.png)
 ![alt text](https://github.com/Prashant-Chandel/Videoplayer-with-Vimeo-support/blob/master/Screenshot/Screenshot_20190310-160922.png)
 ![alt text](https://github.com/Prashant-Chandel/Videoplayer-with-Vimeo-support/blob/master/Screenshot/Screenshot_20190310-161047.png)
 ![alt text](https://github.com/Prashant-Chandel/Videoplayer-with-Vimeo-support/blob/master/Screenshot/Screenshot_20190310-161052.png)
 ![alt text](https://github.com/Prashant-Chandel/Videoplayer-with-Vimeo-support/blob/master/Screenshot/Screenshot_20190310-162217.png)
 
-Usage
+# Usage
 For a working implementation of this project see the sample app.
-
-Add it in your root build.gradle at the end of repositories:
+# Gradle dependency 
+step 1:Add it in your root build.gradle at the end of repositories:
 
 	allprojects {
 		repositories {
@@ -25,7 +27,7 @@ Step 2. Add the dependency
 	        implementation 'com.github.Prashant-Chandel:Videoplayer-with-Vimeo-support:138257e15c'
 	}
             
-For Maven dependency use 
+# For Maven dependency use 
 
 <repositories>
 		<repository>
@@ -42,7 +44,9 @@ Step 2. Add the dependency
 	    <version>138257e15c</version>
 	</dependency>            
             
-            
+  
+  # Code Implementation
+  
 Include the UniversalVideoView and UniversalMediaController widget in your layout. This should usually be placed in the same parent ViewGroup, which makes sense when in full screen state.
             <FrameLayout
                 android:id="@+id/video_layout"
@@ -67,6 +71,7 @@ Include the UniversalVideoView and UniversalMediaController widget in your layou
             </FrameLayout>
 	    
 In your onCreate method, set the UniversalMediaController to the UniversalVideoView and implements the
+
 UniversalVideoView.VideoViewCallback Callback.
             View mBottomLayout;
             View mVideoLayout;
@@ -154,13 +159,38 @@ VimeoExtractor.getInstance().fetchVideoWithURL("https://vimeo.com/1234", null, n
 });
 ```
 
+# Example with vimeo url is for further refrance please check sample code:-
+```java
+ VimeoExtractor.getInstance().fetchVideoWithURL(Constants.VIDEO_Vimeo_URL, null, new OnVimeoExtractionListener() {
+            @Override
+            public void onSuccess(final VimeoVideo video) {
+                String hdStream = video.getStreams().get("1080p");
+
+              
+               if (hdStream != null) {
+                    getActivity().runOnUiThread(new Runnable() {
+                        @Override
+                        public void run() {
+                            // Start the MediaController
+                            mVideoView.setMediaController(mMediaController);
+                            // Get the URL from String VideoURL
+                            Uri video = Uri.parse(hdStreamuRL);
+
+                            mVideoView.setVideoURI(video);
+
+                        }
+                    });
+                }
+            }
+```
+
 Please build and read the documentation for a better oversight of the information available from each video.
 
-Private Videos
+# Private Videos
 When requesting information on private videos - pass the referrer parameter as null, this will ensure the default header is sent and should avoid any HTTP 403 Forbidden errors.
 
             
-Note
+# Note
 Support Android Kitkat v4.4(API Level 19 and above).
 
 UniversalVideoView does not retain its full state when going into the background. You should save or restore the state and take care of the Activity Lifecycle.
