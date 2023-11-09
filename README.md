@@ -1,9 +1,6 @@
 # Videoplayer-with-Vimeo-support
-Android Vimeo /normal video player 
-# DEMO Screen shots
-
-
-
+Introducing Videoplayer-with-Vimeo-support, an innovative and versatile Android video player library designed to seamlessly integrate Vimeo and standard video playback functionalities into your Android applications. This open-source library empowers developers with a robust set of features, providing a smooth and engaging video experience for users.
+# DEMO Screenshots
 ![alt text](https://github.com/Prashant-Chandel/Videoplayer-with-Vimeo-support/blob/master/Screenshot/Screenshot_20190310-160858.png)
 ![alt text](https://github.com/Prashant-Chandel/Videoplayer-with-Vimeo-support/blob/master/Screenshot/Screenshot_20190310-160922.png)
 ![alt text](https://github.com/Prashant-Chandel/Videoplayer-with-Vimeo-support/blob/master/Screenshot/Screenshot_20190310-161047.png)
@@ -14,40 +11,43 @@ Android Vimeo /normal video player
 For a working implementation of this project see the sample app.
 # Gradle dependency 
 step 1:Add it in your root build.gradle at the end of repositories:
-
+```xml
 	allprojects {
 		repositories {
 			...
 			maven { url 'https://jitpack.io' }
 		}
 	}
+```
 Step 2. Add the dependency
-
+```xml
 	dependencies {
 	        implementation 'com.github.Prashant-Chandel:Videoplayer-with-Vimeo-support:138257e15c'
 	}
-            
+ ```           
 # For Maven dependency use 
-
+```xml
 <repositories>
 		<repository>
 		    <id>jitpack.io</id>
 		    <url>https://jitpack.io</url>
 		</repository>
 	</repositories>
+```
   
 Step 2. Add the dependency
-
+```xml
 	<dependency>
 	    <groupId>com.github.Prashant-Chandel</groupId>
 	    <artifactId>Videoplayer-with-Vimeo-support</artifactId>
 	    <version>138257e15c</version>
 	</dependency>            
-            
+ ```           
   
   # Code Implementation
   
 Include the UniversalVideoView and UniversalMediaController widget in your layout. This should usually be placed in the same parent ViewGroup, which makes sense when in full screen state.
+```xml
             <FrameLayout
                 android:id="@+id/video_layout"
                 android:layout_width="fill_parent"
@@ -69,9 +69,10 @@ Include the UniversalVideoView and UniversalMediaController widget in your layou
                     app:uvv_scalable="true" />
 
             </FrameLayout>
+```
 	    
 In your onCreate method, set the UniversalMediaController to the UniversalVideoView and implements the
-
+```java
 UniversalVideoView.VideoViewCallback Callback.
             View mBottomLayout;
             View mVideoLayout;
@@ -123,7 +124,7 @@ UniversalVideoView.VideoViewCallback Callback.
                 }
 
             });
-            
+```
             
             
 Work with vimeo Executor:-To get an vimeo playable link from vimeo client
@@ -205,7 +206,7 @@ uvv_scalable, show or hide the scale button by coding or in xml. if you will not
 
 # License
 
-Copyright [2019] [Prashant chandel <chandela.prashant14@gmail.com>]
+Copyright [2019] [Prashant chandel](chandela.prashant14@gmail.com)
 
 Licensed under the Apache License, Version 2.0 (the "License");
 you may not use this file except in compliance with the License.
